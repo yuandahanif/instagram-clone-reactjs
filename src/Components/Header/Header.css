@@ -1,0 +1,17 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: white;
+	padding: 1em 1em;
+}
+.header__logo {
+	object-fit: contain;
+}
+.header__search {
+	display: none;
+}
+
+.header__navigation{
+    /* background-color: red; */
+}
