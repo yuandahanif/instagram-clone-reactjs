@@ -1,28 +1,29 @@
 import React from "react";
-import { Icon } from "@mdi/react";
-import { mdiHeart } from "@mdi/js";
 
-import { User, Post as PostInterface } from "../../Interfaces";
-import "./Style.css";
+import { User, Article as ArticleInterface } from "../../Interfaces";
+import "./Home.css";
 
-import { Header, Post } from "../../Components";
+import { Article } from "../../Components";
 
 interface Props {
 	data: {
 		user: User | any;
-		posts?: PostInterface[];
+		// article?: ArticleInterface[];
 	};
 }
 
 const Home: React.FC<Props> = ({ data }) => {
 	return (
-		<div className='container'>
-			{/* {data.user?.name} */}
-			<Header user={data.user} />
-			{/* <Icon path={mdiHeart} /> */}
-			{/* header */}
-			{/* story  | sidebar */}
-			{/* posts */}
+		<div className='home'>
+			{/* article */}
+			<div className='home__article'>
+				<Article user={data.user} article={[]} />
+				<Article user={data.user} article={[]} />
+			</div>
+			{/* aside */}
+			<aside className='home__aside'>
+				<p>yuanda.yuu</p>
+			</aside>
 		</div>
 	);
 };

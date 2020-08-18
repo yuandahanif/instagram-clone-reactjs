@@ -5,7 +5,7 @@ export interface User {
 	location?: "";
 }
 
-export interface Post {
+export interface Article {
 	user: User;
 	images: [];
 	descriptions: {

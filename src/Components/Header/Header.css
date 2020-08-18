@@ -1,9 +1,16 @@
 .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	justify-self: stretch;
+	align-self: stretch;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	background-color: white;
-	padding: 1em 1em;
+	padding: 1em calc((100% - 935px) / 2);
+	border-bottom: 1px solid var(--border-color) ;
 }
 .header__logo {
 	object-fit: contain;

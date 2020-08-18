@@ -1,7 +1,7 @@
 import Header from "./Header/Header";
-import Post from "./Post/Post";
+import Article from "./Article/Article";
 
 export {
   Header,
-  Post
+  Article
 }
