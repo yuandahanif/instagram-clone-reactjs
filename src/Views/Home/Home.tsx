@@ -17,8 +17,8 @@ const Home: React.FC<Props> = ({ data }) => {
 		<div className='home'>
 			{/* article */}
 			<div className='home__article'>
-				<Article user={data.user} article={[]} />
-				<Article user={data.user} article={[]} />
+				<Article user={data.user} />
+				<Article user={data.user} />
 			</div>
 			{/* aside */}
 			<aside className='home__aside'>

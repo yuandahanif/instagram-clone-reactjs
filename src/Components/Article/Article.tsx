@@ -1,24 +1,21 @@
-import React from "react";
+import React, { memo } from "react";
+// @ts-ignore
 import { Icon } from "@mdi/react";
 import {
 	mdiDotsHorizontal,
-	mdiHeart,
-	mdiHeartOutline,
-	mdiMessageOutline,
-	mdiSendOutline,
-	mdiBookmark,
-	mdiBookmarkOutline,
 } from "@mdi/js";
 
 import "./Article.css";
 import { User, Article as ArticleInterface } from "../../Interfaces";
 
+import ArticleImages from "./ArticleImage";
+import ArticleActionBar from "./ArticleActionBar";
 interface Props {
 	user: User | any;
-	article: ArticleInterface[];
+	article?: ArticleInterface;
 }
 
-const Article: React.FC<Props> = ({ user }) => {
+const Article: React.FC<Props> = memo(({ user }) => {
 	return (
 		<div className='article'>
 			<div className='article__author'>
@@ -45,14 +42,14 @@ const Article: React.FC<Props> = ({ user }) => {
 					</div>
 				</div>
 			</div>
-			<div className='article__images__container'>
-				<img
-					className='article__image'
-					src='https://picsum.photos/400/300'
-					alt='article'></img>
-				{/* gambar */}
-			</div>
-			<div className='article__actionBar'>{/* like share dll */}</div>
+			<ArticleImages
+				images={[
+					{ url: "https://picsum.photos/400/300" },
+					{ url: "https://picsum.photos/400/300" },
+					{ url: "https://picsum.photos/400/300" },
+				]}
+			/>
+			<ArticleActionBar />
 			<div className='article__description'>
 				<div className='article__descroption__caption'>
 					<p>
@@ -71,6 +68,6 @@ const Article: React.FC<Props> = ({ user }) => {
 			</div>
 		</div>
 	);
-};
+});
 
 export default Article;
