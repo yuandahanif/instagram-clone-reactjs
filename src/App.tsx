@@ -7,7 +7,7 @@ function App() {
 	const user = {
 		user: {
 			avatar:
-				"https://instagram.fcgk8-1.fna.fbcdn.net/v/t51.2885-19/s150x150/75616328_1334445673393712_5971469632094076928_n.jpg?_nc_ht=instagram.fcgk8-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=6jKqpBYa9xMAX8dn5s9&oh=ec22f9c51424de104f10743abdfe6e9d&oe=5F64A8BE",
+				"https://instagram.fcgk8-1.fna.fbcdn.net/v/t51.2885-19/s150x150/75616328_1334445673393712_5971469632094076928_n.jpg?_nc_ht=instagram.fcgk8-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=duAsz-iVaOIAX9IlTVC&oh=793a239b284f7948f842993bb8ca05f4&oe=5F689D3E",
 			name: "Yuanda",
 			url: "https://www.instagram.com/yuanda.yuu/",
 		},

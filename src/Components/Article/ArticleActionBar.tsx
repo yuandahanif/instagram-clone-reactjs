@@ -1,4 +1,4 @@
-import React, { memo, useState, useCallback } from "react";
+import React, { memo, useState } from "react";
 import { useSpring, animated } from "react-spring";
 
 import "./ArticleActionBar.css";
@@ -7,6 +7,7 @@ interface Props {
 	like?: number;
 }
 
+// * LoveIcon
 const LoveIcon: React.FC<{ alreadyLoved?: boolean }> = memo(
 	({ alreadyLoved = false }) => {
 		const [isLoved, setIsLoved] = useState(alreadyLoved);
@@ -61,6 +62,7 @@ const LoveIcon: React.FC<{ alreadyLoved?: boolean }> = memo(
 	}
 );
 
+// * Bookmark icon
 const BookmarkIcon: React.FC<{ alreadyLoved?: boolean }> = memo(() => {
 	const [isBookmarkHovered, setIsBookmarkHovered] = useState(false);
 
@@ -72,7 +74,7 @@ const BookmarkIcon: React.FC<{ alreadyLoved?: boolean }> = memo(() => {
 					onMouseLeave={() => setIsBookmarkHovered(false)}
 					aria-label='Save'
 					className='article__actionBar__icon__container__button__icon'
-					fill={isBookmarkHovered ? "#e6e6e6" : "#8e8e8e"}
+					fill={isBookmarkHovered ? "#8e8e8e" : "#262626"}
 					height='24'
 					viewBox='0 0 48 48'
 					width='24'>
@@ -87,7 +89,6 @@ const ArticleActionBar: React.FC<Props> = memo(({ like }) => {
 	return (
 		<section className='article__actionBar'>
 			<LoveIcon />
-
 			<span className='article__actionBar__icon__container'>
 				<button className='article__actionBar__icon__container__button'>
 					<svg
