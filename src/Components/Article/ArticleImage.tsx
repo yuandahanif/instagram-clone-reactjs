@@ -1,10 +1,10 @@
-import React, { createRef, useRef, useCallback, memo } from "react";
+import React, { useRef, useCallback, memo } from "react";
 // @ts-ignore
 import Slider from "infinite-react-carousel";
 import { Icon } from "@mdi/react";
 import { mdiChevronLeft, mdiChevronRight } from "@mdi/js";
 
-import "./ArticleImage.css";
+import "./Article.scss";
 
 const PrevArrow: React.FC<any> = ({ onClick }) => (
 	<div className='carousel-arrow-container carousel-arrow-prev'>
@@ -47,15 +47,18 @@ const ArticleImages: React.FC<Props> = memo(({ images }) => {
 	}, []);
 
 	return (
-		// wTF. the doc is realy fuuc.
 		<Slider
+			className='article__images__carousel'
 			dots={true}
 			ref={imageRef}
 			prevArrow={<PrevArrow onClick={prevClick} />}
 			nextArrow={<NextArrow onClick={nextClick} />}>
 			{images!.map((image, idx) => (
 				<div className='article__images__container' key={idx.toString()}>
-					<img className='article__image' src={image.url} alt='article'></img>
+					<img
+						className='article__images__container__image'
+						src={image.url}
+						alt='article'></img>
 				</div>
 			))}
 		</Slider>

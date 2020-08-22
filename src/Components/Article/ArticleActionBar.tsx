@@ -1,7 +1,7 @@
 import React, { memo, useState } from "react";
 import { useSpring, animated } from "react-spring";
 
-import "./ArticleActionBar.css";
+import "./Article.scss";
 
 interface Props {
 	like?: number;
