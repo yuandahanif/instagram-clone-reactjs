@@ -12,14 +12,14 @@
 	background-color: white;
 	padding: 1em calc((100% - 935px) / 2);
 	border-bottom: 1px solid var(--border-color) ;
-}
-.header__logo {
-	object-fit: contain;
-}
-.header__search {
-	display: none;
-}
-
-.header__navigation{
-    /* background-color: red; */
+	&__logo {
+		object-fit: contain;
+	}
+	&__search {
+		display: none;
+	}
+	
+	&__navigation{
+		/* background-color: red; */
+	}
 }
