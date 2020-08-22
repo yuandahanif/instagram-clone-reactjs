@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-import "./Article.css";
+import "./Article.scss";
 import { User, Article as ArticleInterface } from "../../Interfaces";
 
 import ArticleImages from "./ArticleImage";
