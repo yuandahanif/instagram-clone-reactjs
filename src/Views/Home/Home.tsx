@@ -1,25 +1,26 @@
 import React from "react";
 
-import { User, Article as ArticleInterface } from "../../Interfaces";
+import { Article as ArticleInterface } from "../../Interfaces";
 import "./Home.css";
 
 import { Article } from "../../Components";
 
 interface Props {
-	data: {
-		user: User | any;
-		// article?: ArticleInterface[];
-	};
+	articles: ArticleInterface[];
 }
 
-const Home: React.FC<Props> = ({ data }) => {
+const Home: React.FC<Props> = ({ articles }) => {
 	return (
 		<div className='home'>
 			{/* article */}
 			<div className='home__article'>
-				<Article user={data.user} />
-				<Article user={data.user} />
+				{/* loop article */}
+
+				{articles.map((article) => (
+					<Article key={article.id} article={article} />
+				))}
 			</div>
+
 			{/* aside */}
 			<aside className='home__aside'>
 				<p>yuanda.yuu</p>

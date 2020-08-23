@@ -72,20 +72,20 @@
 }
 
 // * Article images
-.article__images__carousel {
-	.article__images__container {
-		max-width: var(--image-article-size);
-		max-height: var(--image-article-size);
-		min-width: var(--image-article-size-min);
-		min-height: var(--image-article-size-min);
+.article__images__container {
+	max-width: var(--image-article-size);
+	max-height: var(--image-article-size);
+	min-width: var(--image-article-size-min);
+	min-height: var(--image-article-size-min);
 
-		&__image {
-			min-width: 100%;
-			min-height: 100%;
-			object-fit: cover;
-		}
+	&__image {
+		min-width: 100%;
+		min-height: 100%;
+		object-fit: cover;
 	}
+}
 
+.article__images__carousel {
 	// * Coursel images
 	.carousel-dots {
 		display: flex;
@@ -157,7 +157,7 @@
 // * Action bar
 .article__actionBar {
 	padding: 0 0.5em;
-	margin-top: -1.2em;
+	// margin-top: -1.2em;
 	/* background-color: cyan; */
 	display: flex;
 	align-items: center;
@@ -253,51 +253,51 @@
 		}
 
 		&__createdAt {
-			margin-bottom: 0.25em;
+			margin-bottom: 1em;
 
 			a {
 				color: var(--font-color-grey);
 				font-weight: normal;
-				font-size: 0.7em;
+				font-size: 0.9em;
 			}
 		}
 	}
+}
 
-	// * post comment
-	&__form {
-		display: flex;
-		align-items: stretch;
-		padding: 1em 0;
-		border-top: 1px solid var(--border-color);
-		
-		& form {
-			width: 100%;
+// * Add comment
+.article__comment__form {
+	display: flex;
+	align-items: stretch;
+	padding: 1em;
+	border-top: 1px solid var(--border-color);
+
+	& form {
+		width: 100%;
+	}
+
+	&__inputGroup {
+		width: 100%;
+
+		& input {
+			border: none;
+			padding: 0.2em 0;
+			display: inline-block;
+			background-color: transparent;
+			outline: none;
+			width: 90%;
 		}
-		
-		&__inputGroup {
-			width: 100%;
 
-			& input{
-				border: none;
-				padding: .2em 0;
-				display: inline-block;
-				background-color: transparent;
-				outline: none;
-				width: 90%;
-			}
-			
-			& button{
-				padding: 0;
-				border: none;
-				outline: none;
-				font-weight: 600;
-				display: inline-block;
-				color: rgb(0, 149, 246);
-				background-color: transparent;
-				margin-left: auto;
-				cursor: pointer;
-				width: 10%;
-			}
+		& button {
+			padding: 0;
+			border: none;
+			outline: none;
+			font-weight: 600;
+			display: inline-block;
+			color: rgb(0, 149, 246);
+			background-color: transparent;
+			margin-left: auto;
+			cursor: pointer;
+			width: 10%;
 		}
 	}
 }

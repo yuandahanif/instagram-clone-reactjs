@@ -1,30 +1,33 @@
 import React, { memo } from "react";
 
 import "./Article.scss";
-import { User, Article as ArticleInterface } from "../../Interfaces";
+import { Article as ArticleInterface } from "../../Interfaces";
 
 import ArticleHeader from "./ArticleHeader";
 import ArticleImages from "./ArticleImage";
 import ArticleActionBar from "./ArticleActionBar";
 import ArticleDescription from "./ArticleDescription";
+import { ArticleCommentAdd } from "./ArticleCommentAdd";
 interface Props {
-	user: User;
-	article?: ArticleInterface;
+	article: ArticleInterface;
 }
 
-const Article: React.FC<Props> = memo(({ user, article }) => {
+const Article: React.FC<Props> = memo(({ article }) => {
+	const isMultipleImage: boolean = article.images.length > 1 ? true : false;
 	return (
 		<div className='article'>
-			<ArticleHeader user={user} />
-			<ArticleImages
-				images={[
-					{ url: "https://picsum.photos/400/300" },
-					{ url: "https://picsum.photos/400/300" },
-					{ url: "https://picsum.photos/400/300" },
-				]}
+			<ArticleHeader user={article.user} />
+			<ArticleImages images={article.images} />
+			<ArticleActionBar
+				multipleImage={isMultipleImage}
+				isLoved={article.isLoved}
 			/>
-			<ArticleActionBar />
-			<ArticleDescription user={user} />
+			<ArticleDescription
+				comments={article.comments}
+				description={article.descriptions}
+				user={article.user}
+			/>
+			<ArticleCommentAdd />
 		</div>
 	);
 });

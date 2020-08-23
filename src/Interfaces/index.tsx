@@ -1,17 +1,42 @@
+// articles
 export interface User {
 	avatar: string;
 	name: string;
 	url: string;
-	location?: "";
+	location?: {
+		name: string;
+		url: string;
+	};
+}
+
+export interface Comments {
+	id: string;
+	user: User;
+	comment: string;
+	isLoved: boolean;
+}
+
+export interface ArticleDescription {
+	love: number;
+	captions?: string;
+	hashTag: {
+		name: string;
+		url: string;
+	}[];
+	createdAt: number;
 }
 
 export interface Article {
+	id: string;
 	user: User;
-	images: [];
-	descriptions: {
-		like: number;
-		captions: string;
-		hashTag: Array<[]>;
-		createdAt: number;
-	};
-};
+
+	isLoved: boolean;
+
+	images: {
+		url: string;
+	}[];
+
+	descriptions: ArticleDescription;
+
+	comments: Comments[];
+}

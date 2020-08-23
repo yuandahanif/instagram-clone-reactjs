@@ -25,8 +25,10 @@ const ArticleHeader: React.FC<Props> = memo(({ user }) => {
 					<a className='article__author__description__name__name' href='#'>
 						{user.name}
 					</a>
-					<a className='article__author__description__name__location' href='#'>
-						Isekai, another isekai
+					<a
+						className='article__author__description__name__location'
+						href={user.location?.url}>
+						{user.location?.name}
 					</a>
 				</div>
 				<div className='article__author__description__option'>

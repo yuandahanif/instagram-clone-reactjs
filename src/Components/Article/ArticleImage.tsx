@@ -38,6 +38,17 @@ interface Props {
 const ArticleImages: React.FC<Props> = memo(({ images }) => {
 	const imageRef: React.MutableRefObject<any> = useRef(null);
 
+	if (images.length === 1) {
+		return (
+			<div className='article__images__container'>
+				<img
+					className='article__images__container__image'
+					src={images[0].url}
+					alt='article'></img>
+			</div>
+		);
+	}
+
 	const prevClick = useCallback(() => {
 		imageRef.current.slickPrev();
 	}, []);
