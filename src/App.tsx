@@ -31,11 +31,7 @@ function App() {
 			descriptions: {
 				love: 17,
 				captions:
-					"lorem, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae sed _#_hashtag_#_ saepe deserunt harum porro quos \n _#_hashtag_#_",
-				hashTag: [
-					{ name: "#lorem", url: "#" },
-					{ name: "#ipsum", url: "#" },
-				],
+					"lorem, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae sed #ipsum saepe deserunt harum porro quos \n #lorem",
 				createdAt: getDate(),
 			},
 			comments: [],
@@ -48,8 +44,7 @@ function App() {
 			descriptions: {
 				love: 1123,
 				captions:
-					"lorem, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae sed saepe deserunt harum porro quos",
-				hashTag: [],
+					"lorem, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae @yuanda.yuu sed saepe deserunt @lisaa__ harum porro quos @yuanda",
 				createdAt: getDate(),
 			},
 			comments: [

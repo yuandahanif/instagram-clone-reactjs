@@ -19,10 +19,6 @@ export interface Comments {
 export interface ArticleDescription {
 	love: number;
 	captions?: string;
-	hashTag: {
-		name: string;
-		url: string;
-	}[];
 	createdAt: number;
 }
 

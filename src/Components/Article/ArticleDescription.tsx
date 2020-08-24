@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 // import reactElementToJSXString from "react-element-to-jsx-string";
 import reactStringReplace from "react-string-replace";
 import moment from "moment";
@@ -20,29 +20,32 @@ interface Props {
 const getDate = (date: any) => moment(date, "YYYYMMDD").fromNow();
 
 // * caption parser
-
-const captionParrser = (
-	caption: string | undefined,
-	hashtag: { name: string; url: string }[]
-) => {
+const captionParrser = (caption: string | undefined) => {
 	// tampil di caption max 13 kata.
-	// untuk hashtag _#_hashtag_#_
 	let captionArray = caption?.split(" ");
 	let shortCaption = captionArray?.slice(0, 13);
 
 	let realCaption;
-	if (hashtag.length > 0) {
-		console.log("hashtag", hashtag);
-		realCaption = reactStringReplace(caption, "_#_hashtag_#_", (match, i) =>
-			// <HashTag link={hashtag[i].url}>{hashtag[i].name}</HashTag>
-			{
-				console.log("i =>>>>> ", i);
-				return "asdad";
-			}
-		);
-	} else {
-		realCaption = caption;
-	}
+	// Match @-mentions
+	realCaption = reactStringReplace(
+		caption,
+		/@(\w{5,})/g,
+		(match, i) => (
+			<HashTag key={match + i} link={`https://www.instagram.com/${match}`}>
+				@{match}
+				{console.log("captionParrser -> match", match)}
+			</HashTag>
+		)
+	);
+
+	// Match hashtags
+	realCaption = reactStringReplace(realCaption, /#(\w+)/g, (match, i) => (
+		<HashTag
+			key={match + i}
+			link={`https://www.instagram.com/explore/tags/${match}/`}>
+			#{match}
+		</HashTag>
+	));
 
 	return { shortCaption, realCaption };
 };
@@ -76,6 +79,8 @@ const Username: React.FC<{ user: User }> = ({ user }) => {
 
 const ArticleDescription: React.FC<Props> = memo(
 	({ comments, description, user }) => {
+		const { realCaption, shortCaption } = captionParrser(description.captions);
+
 		return (
 			<div className='article__description'>
 				{/* caption */}
@@ -88,10 +93,8 @@ const ArticleDescription: React.FC<Props> = memo(
 					{/* username + caption*/}
 					<Username user={user} />
 					<span className='article__description__caption__caption'>
-						{description.captions}
-						{console.log(
-							captionParrser(description.captions, description.hashTag)
-						)}
+						{realCaption}
+						{/* {console.log(captionParrser(description.captions))} */}
 					</span>
 				</div>
 
