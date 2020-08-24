@@ -63,7 +63,7 @@ const Aside: React.FC<Props> = ({ user }) => {
 
 			{/* footer */}
 			<div className='aisde__footer'>
-				<div className='aside__footer__nav'>
+				<nav className='aside__footer__nav'>
 					<a href=''>About</a>
 					<a href=''>Help</a>
 					<a href=''>Press</a>
@@ -75,7 +75,7 @@ const Aside: React.FC<Props> = ({ user }) => {
 					<a href=''>Top Accounts</a>
 					<a href=''>Hashtag</a>
 					<a href=''>Language</a>
-				</div>
+				</nav>
 				<span className='aside__footer__copyright'>
 					© 2020 Instagram from Facebook
 				</span>
