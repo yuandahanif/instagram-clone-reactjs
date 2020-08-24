@@ -1,0 +1,101 @@
+@use '../../utils/style';
+
+.aside {
+	&__profile {
+		display: flex;
+		margin: 1.1em 0 0.8em;
+
+		&__avatar {
+			object-fit: contain;
+			border-radius: 50%;
+			height: 3.5em;
+			width: 3.5em;
+		}
+
+		&__description {
+			margin-left: 1.5em;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			// align-items: center;
+			font-size: 0.87em;
+
+			&__username {
+				font-weight: 500;
+				margin-bottom: 0.2em;
+			}
+
+			&__name {
+				color: var(--font-color-grey);
+			}
+		}
+	}
+
+	&__suggestion {
+		margin-bottom: 0.8em;
+		&__header {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 0.5em;
+
+			span {
+				color: var(--font-color-grey);
+				font-weight: 600;
+				font-size: 0.9em;
+			}
+		}
+
+		&__list {
+			&__item {
+				display: flex;
+				padding: 0.5em 0;
+				&__avatar {
+					@extend .aside__profile__avatar;
+					height: 2em;
+					width: 2em;
+				}
+
+				&__description {
+					@extend .aside__profile__description;
+					flex-grow: 1;
+					margin-left: 0.5em;
+
+					span {
+						font-size: 0.85em;
+						color: var(--font-color-grey);
+					}
+				}
+
+				&__follow {
+					display: flex;
+					align-items: center;
+					margin-left: auto;
+					color: var(--link-color-lighter);
+					font-size: 0.8em;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+
+	&__footer {
+		&__nav {
+			display: flex;
+			flex-wrap: wrap;
+			width: 90%;
+            
+			a {
+                font-size: 0.7em;
+                color: var(--font-color-grey);
+				margin-right: 0.4em;
+				margin-bottom: 0.4em;
+			}
+		}
+
+		&__copyright {
+			font-size: 0.7em;
+            color: var(--font-color-grey);
+            text-transform: uppercase;
+		}
+	}
+}

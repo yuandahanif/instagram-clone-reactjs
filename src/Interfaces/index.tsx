@@ -2,6 +2,7 @@
 export interface User {
 	avatar: string;
 	name: string;
+	username: string;
 	url: string;
 	location?: {
 		name: string;

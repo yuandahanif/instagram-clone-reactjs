@@ -23,6 +23,13 @@ body {
 	font-family: Rubik;
 }
 
+a {
+	text-decoration: none;
+	color: var(--font-color);
+	font-weight: 400;
+	font-size: 1em;
+}
+
 :root {
 	font-size: 16px;
 	font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -32,6 +39,7 @@ body {
 	--font-color: rgba(38, 38, 38, 1);
 	--font-color-grey: rgb(142, 142, 142);
 	--link-color: rgb(0, 55, 107);
+	--link-color-lighter: rgb(0, 149, 246);
 
 	/* article size */
 	/* Header */

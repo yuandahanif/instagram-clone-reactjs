@@ -10,6 +10,8 @@ import {
 	User,
 } from "../../Interfaces";
 
+import { LoveIcon } from "./ArticleActionBar";
+
 interface Props {
 	description: description;
 	comments: Comments[];
@@ -76,6 +78,7 @@ const Comment: React.FC<{ comment: Comments }> = ({ comment }) => {
 		<div className='comment'>
 			<Username user={comment.user} />
 			<span className='comment__section'>{comment.comment}</span>
+			<LoveIcon height='1em' alreadyLoved={comment.isLoved} />
 		</div>
 	);
 };
@@ -83,7 +86,7 @@ const Comment: React.FC<{ comment: Comments }> = ({ comment }) => {
 const Username: React.FC<{ user: User }> = ({ user }) => {
 	return (
 		<span className='username'>
-			<a href={user.url}>{user.name}</a>
+			<a href={user.url}>{user.username}</a>
 		</span>
 	);
 };

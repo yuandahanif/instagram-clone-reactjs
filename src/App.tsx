@@ -14,7 +14,8 @@ const getDate = (): number => {
 function App() {
 	const user: User = {
 		avatar: "https://picsum.photos/32",
-		name: "yuanda.yuu",
+		username: "yuanda.yuu",
+		name: "yuanda",
 		url: "https://www.instagram.com/yuanda.yuu/",
 	};
 
@@ -51,7 +52,7 @@ function App() {
 				{
 					id: "1",
 					comment: "lorem lah, apa lagi.",
-					isLoved: false,
+					isLoved: true,
 					user,
 				},
 				{
@@ -74,7 +75,7 @@ function App() {
 			<Header user={user} />
 			<main className='body__main'>
 				{/* story-post  | sidebar  & profile & norification & direct message & explore*/}
-				<Home articles={articles} />
+				<Home articles={articles} user={user} />
 
 				{/* footer */}
 			</main>

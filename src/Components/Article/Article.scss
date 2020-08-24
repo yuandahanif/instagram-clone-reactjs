@@ -236,8 +236,17 @@
 	.comment {
 		line-height: 1.2em;
 		margin-bottom: 0.25em;
+		width: 100%;
+		display: flex;
 		&__section {
 			//
+			margin-right: auto;
+		}
+
+		button {
+			@extend .moreButton;
+			padding: 0 0;
+			margin-left: auto;
 		}
 	}
 

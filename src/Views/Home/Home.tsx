@@ -1,15 +1,16 @@
 import React from "react";
 
-import { Article as ArticleInterface } from "../../Interfaces";
-import "./Home.css";
+import { Article as ArticleInterface, User } from "../../Interfaces";
+import "./Home.scss";
 
-import { Article } from "../../Components";
+import { Article, Aside } from "../../Components";
 
 interface Props {
 	articles: ArticleInterface[];
+	user: User;
 }
 
-const Home: React.FC<Props> = ({ articles }) => {
+const Home: React.FC<Props> = ({ articles, user }) => {
 	return (
 		<div className='home'>
 			{/* article */}
@@ -23,7 +24,7 @@ const Home: React.FC<Props> = ({ articles }) => {
 
 			{/* aside */}
 			<aside className='home__aside'>
-				<p>yuanda.yuu</p>
+				<Aside user={user} />
 			</aside>
 		</div>
 	);

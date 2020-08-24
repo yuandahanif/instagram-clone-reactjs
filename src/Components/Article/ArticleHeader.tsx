@@ -10,20 +10,26 @@ interface Props {
 	user: User;
 }
 
+export const UserAvatar: React.FC<Props> = memo(({ user }) => {
+	return (
+		<div className='article__author__avatar'>
+			<img
+				className='article__author__avatar__image'
+				src={user.avatar}
+				alt={user.username}
+			/>
+		</div>
+	);
+});
+
 const ArticleHeader: React.FC<Props> = memo(({ user }) => {
 	return (
 		<div className='article__author'>
-			<div className='article__author__avatar'>
-				<img
-					className='article__author__avatar__image'
-					src='https://picsum.photos/400/300'
-					alt={user.name}
-				/>
-			</div>
+			<UserAvatar user={user} />
 			<div className='article__author__description'>
 				<div className='article__author__description__name'>
 					<a className='article__author__description__name__name' href='#'>
-						{user.name}
+						{user.username}
 					</a>
 					<a
 						className='article__author__description__name__location'
