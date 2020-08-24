@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/instagram-clone-reactjs/precache-manifest.4d02def5285c89b797ff4546b2c67340.js"
+  "/instagram-clone-reactjs/precache-manifest.8cb846cfbc122238e2efb8a2e0e723b1.js"
 );
 
 self.addEventListener('message', (event) => {
