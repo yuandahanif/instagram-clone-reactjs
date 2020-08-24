@@ -31,7 +31,7 @@ function App() {
 			descriptions: {
 				love: 17,
 				captions:
-					"lorem, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae sed #ipsum saepe deserunt harum porro quos \n #lorem",
+					"lorem, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae sed #ipsum saepe deserunt @yuanda.yuu harum porro quos \n #lorem #lorem #uwu",
 				createdAt: getDate(),
 			},
 			comments: [],
@@ -44,7 +44,7 @@ function App() {
 			descriptions: {
 				love: 1123,
 				captions:
-					"lorem, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae @yuanda.yuu sed saepe deserunt @lisaa__ harum porro quos @yuanda",
+					"lorem, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae @yuanda.yuu sed saepe deserunt @lisaa__ harum porro quos @lia?",
 				createdAt: getDate(),
 			},
 			comments: [

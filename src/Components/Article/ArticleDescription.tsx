@@ -29,7 +29,7 @@ const captionParrser = (caption: string | undefined) => {
 	// Match @-mentions
 	realCaption = reactStringReplace(
 		caption,
-		/@(\w{5,})/g,
+		/@([-a-zA-Z0-9._]{3,25})/g,
 		(match, i) => (
 			<HashTag key={match + i} link={`https://www.instagram.com/${match}`}>
 				@{match}
