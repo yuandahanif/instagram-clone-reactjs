@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { memo, useState, useCallback } from "react";
 // import reactElementToJSXString from "react-element-to-jsx-string";
 import reactStringReplace from "react-string-replace";
 import moment from "moment";
@@ -21,19 +21,18 @@ const getDate = (date: any) => moment(date, "YYYYMMDD").fromNow();
 
 // * caption parser
 const captionParrser = (caption: string | undefined) => {
-	// tampil di caption max 13 kata.
-	let captionArray = caption?.split(" ");
-	let shortCaption = captionArray?.slice(0, 13);
-
 	let realCaption;
+
+	// line break
+	realCaption = reactStringReplace(caption, "/n", () => "<br/>");
+
 	// Match @-mentions
 	realCaption = reactStringReplace(
-		caption,
+		realCaption,
 		/@([-a-zA-Z0-9._]{3,25})/g,
 		(match, i) => (
 			<HashTag key={match + i} link={`https://www.instagram.com/${match}`}>
 				@{match}
-				{console.log("captionParrser -> match", match)}
 			</HashTag>
 		)
 	);
@@ -47,8 +46,22 @@ const captionParrser = (caption: string | undefined) => {
 		</HashTag>
 	));
 
+	// tampil di caption max 13 kata.
+	let captionArray = caption?.split(" ");
+	let shortCaption = captionArray?.slice(0, 13).join(" ");
+
 	return { shortCaption, realCaption };
 };
+
+const MoreButton: React.FC<{
+	onClick: any;
+}> = memo(({ onClick }) => {
+	return (
+		<span className='moreButton'>
+			<button onClick={onClick}>...more</button>
+		</span>
+	);
+});
 
 const HashTag: React.FC<{ link: string }> = memo(({ children, link }) => {
 	return (
@@ -80,6 +93,10 @@ const Username: React.FC<{ user: User }> = ({ user }) => {
 const ArticleDescription: React.FC<Props> = memo(
 	({ comments, description, user }) => {
 		const { realCaption, shortCaption } = captionParrser(description.captions);
+		const [displayFullCaption, setDisplayFullCaption] = useState(false);
+		const onMoreButtonClick = useCallback(() => {
+			setDisplayFullCaption(true);
+		}, []);
 
 		return (
 			<div className='article__description'>
@@ -93,9 +110,10 @@ const ArticleDescription: React.FC<Props> = memo(
 					{/* username + caption*/}
 					<Username user={user} />
 					<span className='article__description__caption__caption'>
-						{realCaption}
+						{displayFullCaption ? realCaption : shortCaption}
 						{/* {console.log(captionParrser(description.captions))} */}
 					</span>
+					{!displayFullCaption && <MoreButton onClick={onMoreButtonClick} />}
 				</div>
 
 				{/* comment */}

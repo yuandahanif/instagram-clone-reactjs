@@ -196,6 +196,21 @@
 		font-size: 1em;
 	}
 
+	// * more button
+	.moreButton {
+		display: inline-block;
+
+		& button {
+			color: rgb(142, 142, 142);
+			// padding: 0;
+			margin: 0;
+			background-color: white;
+			border: none;
+			outline: none;
+			cursor: pointer;
+		}
+	}
+
 	// * hashtag
 	.hashtag {
 		color: var(--link-color);
