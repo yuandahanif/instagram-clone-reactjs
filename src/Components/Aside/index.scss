@@ -3,7 +3,7 @@
 .aside {
 	&__profile {
 		display: flex;
-		margin: 1.1em 0 0.8em;
+		margin: 1.1em 0 1.2em;
 
 		&__avatar {
 			object-fit: contain;
@@ -36,7 +36,7 @@
 		&__header {
 			display: flex;
 			justify-content: space-between;
-			margin-bottom: 0.5em;
+			// margin-bottom: 0.5em;
 
 			span {
 				color: var(--font-color-grey);
@@ -46,6 +46,7 @@
 		}
 
 		&__list {
+			padding: 0.5em 0;
 			&__item {
 				display: flex;
 				padding: 0.5em 0;
@@ -83,10 +84,10 @@
 			display: flex;
 			flex-wrap: wrap;
 			width: 90%;
-            
+			margin-bottom: 1em;
 			a {
-                font-size: 0.7em;
-                color: var(--font-color-grey);
+				font-size: 0.7em;
+				color: var(--font-color-grey);
 				margin-right: 0.4em;
 				margin-bottom: 0.4em;
 			}
@@ -94,8 +95,8 @@
 
 		&__copyright {
 			font-size: 0.7em;
-            color: var(--font-color-grey);
-            text-transform: uppercase;
+			color: var(--font-color-grey);
+			text-transform: uppercase;
 		}
 	}
 }
