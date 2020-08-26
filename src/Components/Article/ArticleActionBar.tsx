@@ -1,8 +1,6 @@
 import React, { memo, useState } from "react";
 import { useSpring, animated } from "react-spring";
 
-import "./Article.scss";
-
 interface Props {
 	isLoved?: boolean;
 	multipleImage?: boolean;

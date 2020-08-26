@@ -1,7 +1,8 @@
 import React from "react";
 
 import { Article as ArticleInterface, User } from "../../Interfaces";
-import "./Home.scss";
+
+import "../../styles/Home.scss";
 
 import { Article, Aside } from "../../Components";
 

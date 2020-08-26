@@ -4,7 +4,6 @@ import Slider from "infinite-react-carousel";
 import { Icon } from "@mdi/react";
 import { mdiChevronLeft, mdiChevronRight } from "@mdi/js";
 
-import "./Article.scss";
 
 const PrevArrow: React.FC<any> = ({ onClick }) => (
 	<div className='carousel-arrow-container carousel-arrow-prev'>

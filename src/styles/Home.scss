@@ -1,0 +1,48 @@
+@use 'utils/variable' as var;
+@use 'utils/media';
+@use 'components/Articles';
+
+.home {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+
+	&__article {
+		width: 100%;
+		max-width: 614px;
+		min-height: 100vh;
+		box-sizing: border-box;
+		/* margin: 0 auto; */
+	}
+
+	&__aside {
+		display: none;
+		max-width: 293px;
+		min-height: 10vh;
+		width: 100%;
+		position: -webkit-sticky; /* Safari */
+		position: sticky;
+		top: 6em;
+
+		// @media only screen and (min-width: var.$media-large-desktop) {
+		// 	// desktop
+		// 	.home {
+		// 		&__aside {
+		//             display: flex;
+		//         }
+		//     }
+		// }
+	}
+}
+
+// @media only screen and (min-width: var(--query-1000)) {
+// 	// desktop
+// 	.home {
+// 		&__aside {
+// 			display: flex;
+// 		}
+// 	}
+// }

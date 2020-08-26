@@ -1,0 +1,30 @@
+// import font family
+@import "../fonts/stylesheet.css";
+
+// font
+$font-size: 16px;
+$font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+	Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+// color
+$border-color: rgba(184, 184, 184, 0.575);
+$font-color: rgba(38, 38, 38, 1);
+$font-color-grey: rgb(142, 142, 142);
+$font-color-link: rgb(0, 55, 107);
+$font-color-link-lighter: rgb(0, 149, 246);
+
+// media query
+$media-large-desktop: 1000px;
+$media-desktop: 735px;
+$media-tablet: 640px;
+$media-phone: 500px;
+
+// ======
+
+/* article page */
+/* Header */
+$header-avatar-size: 2em;
+$header-avatar-size-min: 2em;
+/* image */
+$image-article-size: 38.375em;
+$image-article-size-min: 18.75em;

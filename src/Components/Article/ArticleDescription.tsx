@@ -3,7 +3,6 @@ import React, { memo, useState, useCallback } from "react";
 import reactStringReplace from "react-string-replace";
 import moment from "moment";
 
-import "./Article.scss";
 import {
 	ArticleDescription as description,
 	Comments,

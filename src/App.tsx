@@ -4,7 +4,7 @@ import moment from "moment";
 import { Article, User } from "./Interfaces/index";
 
 import Home from "./Views/Home/Home";
-import "./App.scss";
+import "./styles/App.scss";
 import { Header } from "./Components";
 
 const getDate = (): number => {

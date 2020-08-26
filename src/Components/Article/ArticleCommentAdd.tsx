@@ -1,7 +1,5 @@
 import React, { memo } from "react";
 
-import "./Article.scss";
-
 export const ArticleCommentAdd: React.FC = memo(() => {
 	return (
 		<section className='article__comment__form'>

@@ -1,4 +1,8 @@
-@import "./fonts/stylesheet.css";
+@import "../fonts/stylesheet.css";
+
+@use 'utils/variable' as var;
+@use 'utils/main-style';
+@use 'utils/media' as media;
 
 .body {
 	position: relative;
@@ -17,6 +21,8 @@
 		max-width: 935px;
 		box-sizing: border-box;
 	}
+
+	// @extend
 }
 
 body {
@@ -40,6 +46,12 @@ a {
 	--font-color-grey: rgb(142, 142, 142);
 	--link-color: rgb(0, 55, 107);
 	--link-color-lighter: rgb(0, 149, 246);
+
+	// media query
+	--query-1000: 1000px; 
+	--query-735: 735px;
+	--query-640: 640px;
+	--query-500: 500px;
 
 	/* article size */
 	/* Header */
