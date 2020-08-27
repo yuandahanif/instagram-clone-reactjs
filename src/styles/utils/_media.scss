@@ -33,10 +33,10 @@ $breakpoints: (
   'phone': 320px,
   'tablet': 768px,
   'desktop': 1024px,
-  'query-1000': 1000px, 
-	'query-735': 735px,
-	'query-640': 640px,
-	'query-500': 500px,
+  'query-large-desktop': 1000px, 
+	'query-desktop': 735px,
+	'query-tablet': 640px,
+	'query-phone': 500px,
 ) !default;
 
 

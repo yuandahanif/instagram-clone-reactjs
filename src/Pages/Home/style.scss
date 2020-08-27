@@ -14,7 +14,11 @@
 		max-width: 614px;
 		min-height: 100vh;
 		box-sizing: border-box;
-		/* margin: 0 auto; */
+		margin: 0 auto;
+		
+		@include media(">query-large-desktop") {
+			margin: 0;
+		}
 	}
 
 	&__aside {
@@ -26,14 +30,7 @@
 		position: sticky;
 		top: 6em;
 
-		// $breakpoints: (
-		// 	"query-1000": 1000px,
-		// 	"query-735": 735px,
-		// 	"query-640": 640px,
-		// 	"query-500": 500px,
-		// ) !default;
-
-		@include media(">query-1000") {
+		@include media(">query-large-desktop") {
 			display: block;
 		}
 	}

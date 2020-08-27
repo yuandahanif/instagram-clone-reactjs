@@ -1,9 +1,20 @@
+@import "../../styles/utils/variable";
+@import "../../styles/utils/media";
+
 .article {
 	width: 100%;
-	border: 1px solid var(--border-color);
-	border-radius: 4px;
-	margin-bottom: 4rem;
+	margin-bottom: 0;
 	// min-height: ;
+
+	@include media(">query-tablet") {
+		margin-bottom: 1em;
+		border: 1px solid $border-color;
+		border-radius: 4px;
+	}
+
+	@include media(">query-desktop") {
+		margin-bottom: 4rem;
+	}
 
 	// * header author
 	&__author {
@@ -26,15 +37,15 @@
 			background: linear-gradient(to bottom, red, purple);
 
 			&__image {
-				max-width: var(--image-header-avatar);
-				max-height: var(--image-header-avatar);
-				height: var(--image-header-avatar-min);
-				width: var(--image-header-avatar-min);
+				max-width: $header-avatar-size;
+				max-height: $header-avatar-size;
+				height: $header-avatar-size-min;
+				width: $header-avatar-size-min;
 				border: 0.14em solid white;
 				background-color: white;
 				/* font-size: 1em; */
 				/* box-sizing: border-box; */
-				color: var(--font-color);
+				color: $font-color;
 				border-radius: 50%;
 			}
 		}
@@ -50,14 +61,14 @@
 				flex-direction: column;
 			}
 			&__name__name {
-				color: var(--font-color);
+				color: $font-color;
 				display: block;
 				font-size: 0.9em;
 				font-weight: 500;
 				text-decoration: none;
 			}
 			&__name__location {
-				color: var(--font-color);
+				color: $font-color;
 				margin-top: 0.2em;
 				text-decoration: none;
 				display: block;
@@ -73,10 +84,10 @@
 
 // * Article images
 .article__images__container {
-	max-width: var(--image-article-size);
-	max-height: var(--image-article-size);
-	min-width: var(--image-article-size-min);
-	min-height: var(--image-article-size-min);
+	max-width: $image-article-size;
+	max-height: $image-article-size;
+	min-width: $image-article-size-min;
+	min-height: $image-article-size-min;
 
 	&__image {
 		min-width: 100%;
@@ -191,7 +202,7 @@
 
 	a {
 		text-decoration: none;
-		color: var(--font-color);
+		color: $font-color;
 		font-weight: 500;
 		font-size: 1em;
 	}
@@ -213,7 +224,7 @@
 
 	// * hashtag
 	.hashtag {
-		color: var(--link-color);
+		color: $font-color-link;
 		font-weight: normal;
 
 		&::after {
@@ -269,7 +280,7 @@
 			display: block;
 			margin-bottom: 0.25em;
 			a {
-				color: var(--font-color-grey);
+				color: $font-color-grey;
 				font-weight: normal;
 			}
 		}
@@ -280,7 +291,7 @@
 			margin-bottom: 1em;
 
 			a {
-				color: var(--font-color-grey);
+				color: $font-color-grey;
 				font-weight: normal;
 				font-size: 0.9em;
 			}
@@ -290,10 +301,14 @@
 
 // * Add comment
 .article__comment__form {
-	display: flex;
-	align-items: stretch;
-	padding: 1em;
-	border-top: 1px solid var(--border-color);
+	display: none;
+
+	@include media(">query-tablet") {
+		display: flex;
+		align-items: stretch;
+		padding: 1em;
+		border-top: 1px solid $border-color;
+	}
 
 	& form {
 		width: 100%;
