@@ -7,7 +7,7 @@ import {
 	ArticleDescription as description,
 	Comments,
 	User,
-} from "../../Interfaces";
+} from "../../Interfaces/articles";
 
 import { LoveIcon } from "./ArticleActionBar";
 

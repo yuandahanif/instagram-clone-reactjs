@@ -1,11 +1,11 @@
 import React from "react";
 import moment from "moment";
 
-import { Article, User } from "./Interfaces/index";
+import { Article, User } from "../Interfaces/articles";
 
-import Home from "./Views/Home/Home";
-import "./styles/App.scss";
-import { Header } from "./Components";
+import Home from "./Home/Home";
+import "../styles/App.scss";
+import { Header } from "../Components";
 
 const getDate = (): number => {
 	return moment().millisecond();

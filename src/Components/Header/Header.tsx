@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./Header.scss";
-import { User } from "../../Interfaces";
+import { User } from "../../Interfaces/articles";
 
 interface Props {
 	user: User | any;
@@ -9,7 +9,7 @@ interface Props {
 
 const Header: React.FC<Props> = ({ user }) => {
 	return (
-		<div className="header">
+    <div className="header">
       <img
         className="header__logo"
 				alt='Instagram Logo'

@@ -1,7 +1,6 @@
-@use 'utils/variable' as var;
-@use 'utils/media';
-@use 'components/Articles';
-
+// Home
+@import "../../styles/utils/variable";
+@import "../../styles/utils/media";
 .home {
 	display: flex;
 	justify-content: space-between;
@@ -27,22 +26,15 @@
 		position: sticky;
 		top: 6em;
 
-		// @media only screen and (min-width: var.$media-large-desktop) {
-		// 	// desktop
-		// 	.home {
-		// 		&__aside {
-		//             display: flex;
-		//         }
-		//     }
-		// }
+		// $breakpoints: (
+		// 	"query-1000": 1000px,
+		// 	"query-735": 735px,
+		// 	"query-640": 640px,
+		// 	"query-500": 500px,
+		// ) !default;
+
+		@include media(">query-1000") {
+			display: block;
+		}
 	}
 }
-
-// @media only screen and (min-width: var(--query-1000)) {
-// 	// desktop
-// 	.home {
-// 		&__aside {
-// 			display: flex;
-// 		}
-// 	}
-// }

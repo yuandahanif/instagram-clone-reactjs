@@ -3,7 +3,7 @@ import React, { memo } from "react";
 import { Icon } from "@mdi/react";
 import { mdiDotsHorizontal } from "@mdi/js";
 
-import { User } from "../../Interfaces";
+import { User } from "../../Interfaces/articles";
 
 interface Props {
 	user: User;

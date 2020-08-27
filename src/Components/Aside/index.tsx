@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-import { User } from "../../Interfaces";
+import { User } from "../../Interfaces/articles";
 import "./index.scss";
 
 interface Props {
