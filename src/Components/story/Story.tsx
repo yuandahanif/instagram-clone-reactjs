@@ -50,50 +50,49 @@ const StoryItem: React.FC<ListProps> = memo(
 const Story: React.FC<Props> = () => {
 	let arr = Array(30).fill("arr");
 
-	const [storyWidth, setStoryWidth] = useState<null | undefined | number>(0);
 	const storyRef = useRef<HTMLUListElement>(null);
+	const [lastWidth, setLastWidth] = useState(0);
 	const [storyPart, setStoryPart] = useState(0);
 	const [storyCurrentPart, setStoryCurrentPart] = useState(0);
-	const [storyCurrentTransition, setStoryCurrentTransition] = useState(0);
+	const [storyCurrentTransform, setStoryCurrentTransform] = useState(0);
 
 	useEffect(() => {
-		const elm = storyRef.current?.getBoundingClientRect().width;
+		// ambil full width nya.
+		const width = storyRef.current?.getBoundingClientRect().width;
+		if (width) {
+			const widthPart = Math.floor(width / 320);
 
-		if (typeof elm !== "undefined") {
-			setStoryWidth(elm);
-			setStoryPart(Math.floor(elm / 320));
+			// bagi dengan 320 hasilnya berapa part? dan tampung
+			setStoryPart(widthPart);
+
+			// ambil width sisa hasil bagi.
+			setLastWidth(width % widthPart);
 		}
-
-		return () => {
-			setStoryWidth(0);
-		};
-	}, [storyRef]);
+	}, []);
 
 	const handelNext = useCallback(() => {
 		const elm = storyRef.current;
 
-		if (elm !== null) {
-			const transition = storyPart > storyCurrentPart;
+		console.log("handelNext -> storyPart", storyPart);
+		console.log("handelNext -> storyCurrentPart", storyCurrentPart);
 
-			console.log("handelNext -> storyPart", storyPart);
-			console.log("handelNext -> storyCurrentPart", storyCurrentPart);
-			console.log("storyWidth", storyWidth);
+		// apakah ini last next?
+		if (storyPart > storyCurrentPart) return;
+		const isLast = storyPart === storyCurrentPart;
 
-			elm.style.transform = `translateX(${
-				transition
-					? storyCurrentTransition - 320
-					: storyCurrentTransition - (storyWidth % storyPart)
-			}px)`;
+		if (elm) {
+			// tidak? maka transisi sekarang - 320
+			const transform = isLast
+				? storyCurrentTransform - lastWidth
+				: storyCurrentTransform - 320;
 
-			console.log(
-				"handelNext -> storyCurrentTransition",
-				storyCurrentTransition
-			);
+			elm.style.transform = `translateX(${transform})`;
+			// iya? maka transisi sekarang - lastWidth
 
-			setStoryCurrentTransition((state) => (state -= 320));
-			setStoryCurrentPart((state) => (state += 1));
+			setStoryCurrentPart((state) => state + 1);
+			setStoryCurrentTransform(transform);
 		}
-	}, [storyWidth]);
+	}, []);
 
 	return (
 		<div className='story'>
