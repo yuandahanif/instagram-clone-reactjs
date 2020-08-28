@@ -9,6 +9,7 @@ import React, {
 import { User } from "../../Interfaces/articles";
 
 import "./style.scss";
+import { stat } from "fs";
 
 interface Props {
 	stories?: StoryProps[];
@@ -47,19 +48,52 @@ const StoryItem: React.FC<ListProps> = memo(
 );
 
 const Story: React.FC<Props> = () => {
-	let arr = Array(10).fill("arr");
+	let arr = Array(30).fill("arr");
 
 	const [storyWidth, setStoryWidth] = useState<null | undefined | number>(0);
 	const storyRef = useRef<HTMLUListElement>(null);
+	const [storyPart, setStoryPart] = useState(0);
+	const [storyCurrentPart, setStoryCurrentPart] = useState(0);
+	const [storyCurrentTransition, setStoryCurrentTransition] = useState(0);
 
 	useEffect(() => {
-		const elm = storyRef.current;
-		setStoryWidth(elm?.getBoundingClientRect().width);
-		console.log("storyRef", elm);
-		return () => {};
-	}, []);
+		const elm = storyRef.current?.getBoundingClientRect().width;
 
-	const handelNext = useCallback(() => {}, [storyRef]);
+		if (typeof elm !== "undefined") {
+			setStoryWidth(elm);
+			setStoryPart(Math.floor(elm / 320));
+		}
+
+		return () => {
+			setStoryWidth(0);
+		};
+	}, [storyRef]);
+
+	const handelNext = useCallback(() => {
+		const elm = storyRef.current;
+
+		if (elm !== null) {
+			const transition = storyPart > storyCurrentPart;
+
+			console.log("handelNext -> storyPart", storyPart);
+			console.log("handelNext -> storyCurrentPart", storyCurrentPart);
+			console.log("storyWidth", storyWidth);
+
+			elm.style.transform = `translateX(${
+				transition
+					? storyCurrentTransition - 320
+					: storyCurrentTransition - (storyWidth % storyPart)
+			}px)`;
+
+			console.log(
+				"handelNext -> storyCurrentTransition",
+				storyCurrentTransition
+			);
+
+			setStoryCurrentTransition((state) => (state -= 320));
+			setStoryCurrentPart((state) => (state += 1));
+		}
+	}, [storyWidth]);
 
 	return (
 		<div className='story'>

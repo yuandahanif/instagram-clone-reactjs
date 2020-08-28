@@ -14,18 +14,19 @@
 
 	&__container {
 		width: 100%;
+		overflow: hidden;
 	}
 }
 
 .story__list {
 	display: flex;
-    overflow: hidden;
-    padding: 0 .7em;
-    list-style: none;
+	padding: 0 0.7em;
+	list-style: none;
+	transition: 500s ease-in;
 
-    a{
-        color: $font-color;
-    }
+	a {
+		color: $font-color;
+	}
 
 	&__item {
 		padding: 0 0.2em;
@@ -34,16 +35,16 @@
 		align-items: center;
 
 		&__image {
-            $image-size: 66px;
+			$image-size: 66px;
 
 			max-width: $image-size;
 			max-height: $image-size;
 			width: $image-size;
-            height: $image-size;
-            border-radius: 50%;
+			height: $image-size;
+			border-radius: 50%;
 			overflow: hidden;
-            object-fit: cover;
-            background-color: aquamarine;
+			object-fit: cover;
+			background-color: aquamarine;
 		}
 		&__profileName {
 			font-size: 12px;
