@@ -1,0 +1,33 @@
+.header {
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background-color: white;
+	border-bottom: 1px solid var(--border-color);
+
+	&__container {
+		flex-direction: row;
+		display: flex;
+		justify-self: stretch;
+		align-self: stretch;
+		justify-content: space-between;
+		padding: 1em 1.2em;
+		max-width: 935px;
+		width: 100%;
+
+		&__logo {
+			object-fit: contain;
+		}
+		&__search {
+			display: none;
+		}
+
+		&__navigation {
+			/* background-color: red; */
+		}
+	}
+}

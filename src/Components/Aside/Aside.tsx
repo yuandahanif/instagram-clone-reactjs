@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 
 import { User } from "../../Interfaces/articles";
-import "./index.scss";
+import "./style.scss";
 
 interface Props {
 	user: User;
