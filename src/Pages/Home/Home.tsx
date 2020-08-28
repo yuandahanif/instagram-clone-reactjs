@@ -4,7 +4,7 @@ import { Article as ArticleInterface, User } from "../../Interfaces/articles";
 
 import "./style.scss";
 
-import { Article, Aside } from "../../Components";
+import { Article, Aside, Story } from "../../Components";
 
 interface Props {
 	articles: ArticleInterface[];
@@ -16,7 +16,7 @@ const Home: React.FC<Props> = ({ articles, user }) => {
 		<div className='home'>
 			{/* article */}
 			<div className='home__article'>
-				{/* loop article */}
+				<Story />
 
 				{articles.map((article) => (
 					<Article key={article.id} article={article} />

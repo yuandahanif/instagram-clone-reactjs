@@ -1,4 +1,4 @@
-@use '../../utils/style';
+@import "../../styles/utils/variable";
 
 .aside {
 	&__profile {
@@ -26,7 +26,7 @@
 			}
 
 			&__name {
-				color: var(--font-color-grey);
+				color: $font-color-grey;
 			}
 		}
 	}
@@ -39,7 +39,7 @@
 			// margin-bottom: 0.5em;
 
 			span {
-				color: var(--font-color-grey);
+				color: $font-color-grey;
 				font-weight: 600;
 				font-size: 0.9em;
 			}
@@ -63,7 +63,7 @@
 
 					span {
 						font-size: 0.85em;
-						color: var(--font-color-grey);
+						color: $font-color-grey;
 					}
 				}
 
@@ -71,7 +71,7 @@
 					display: flex;
 					align-items: center;
 					margin-left: auto;
-					color: var(--link-color-lighter);
+					color: $font-color-link-lighter;
 					font-size: 0.8em;
 					font-weight: 600;
 				}
@@ -87,7 +87,7 @@
 			margin-bottom: 1em;
 			a {
 				font-size: 0.7em;
-				color: var(--font-color-grey);
+				color: $font-color-grey;
 				margin-right: 0.4em;
 				margin-bottom: 0.4em;
 			}
@@ -95,7 +95,7 @@
 
 		&__copyright {
 			font-size: 0.7em;
-			color: var(--font-color-grey);
+			color: $font-color-grey;
 			text-transform: uppercase;
 		}
 	}
